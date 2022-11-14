@@ -1,16 +1,38 @@
-# Instalando paquetes para mejorar el terminal
+# Intalling Oh-My-posh for the terminal | Instalando Oh-My-posh para el terminal
 
-winget install JanDeDobbeleer.OhMyPosh -s winget
+winget install JanDeDobbeleer.OhMyPosh -s winget -e --accept-source-agreements --accept-package-agreements
 
 #Instalando fuentes para el terminal
 oh-my-posh font install
 
-# Creamos un nuevo profile para poweshell
+# ProwerShell Profile | Profile de Powershell
 
-New-Item -Path $PROFILE -Type File -Force
+# Create symlink lo user profile
+## Instalando paquetes necesarios
+winget install Git.Git -s winget -e --accept-source-agreements --accept-package-agreements
 
-# agregamos la lines de configuracion al profila
-& ([ScriptBlock]::Create((oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\jandedobbeleer.omp.json" --print) -join "`n"))
+winget install gerardog.gsudo -s winget -e --accept-source-agreements --accept-package-agreements
+
+
+#If the file does not exist, create it.
+if (-not(Test-Path -Path $PROFILE -PathType Leaf)) {
+    try {
+        Invoke-RestMethod https://github.com/rlsalgueiro/dotfiles/raw/main/Windows/Microsoft.PowerShell_profile.ps1 -o $PROFILE
+        Write-Host "The profile @ [$PROFILE] has been created."
+    }
+    catch {
+        throw $_.Exception.Message
+    }
+}
+# If the file already exists, copy to oldprofile.
+else {
+    Get-Item -Path $PROFILE | Move-Item -Destination oldprofile.ps1
+    Invoke-RestMethod https://github.com/rlsalgueiro/dotfiles/raw/main/Windows/Microsoft.PowerShell_profile.ps1 -o $PROFILE
+    Write-Host "The profile @ [$PROFILE] has been created and old profile removed."
+}
+
+# le hacemos reload al profile
+& $profile
 
 # Instalando paquetes de powerShell
 Install-Module -Name Terminal-Icons -Repository PSGallery
