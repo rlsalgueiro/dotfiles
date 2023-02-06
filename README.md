@@ -13,10 +13,10 @@ These are my customization files for Windows and/or Linux desktops.| Estos son m
 
 - [Git for Windows](https://gitforwindows.org/)
 - [Oh My Posh](https://ohmyposh.dev/) - Prompt theme engine
-- [Post-git]()a PowerShell module that integrates Git and PowerShell
+- [Posh-git](https://github.com/dahlbyk/posh-git) a PowerShell module that integrates Git and PowerShell
 - [Terminal Icons](https://github.com/devblackops/Terminal-Icons) - Folder and file icons
 - [PSReadLine](https://docs.microsoft.com/en-us/powershell/module/psreadline/) - Cmdlets for customizing the editing environment, used for autocompletion
-- [z](https://www.powershellgallery.com/packages/z) - Directory jumper
+- [z](https://github.com/badmotorfinger/z) - Directory jumper quickly navigate the file system in PowerShell based on your cd command history.
 - [PSFzf](https://github.com/kelleyma49/PSFzf) - Fuzzy finder
 - [gsudo](https://github.com/gerardog/gsudo) - sudo for Windows
 

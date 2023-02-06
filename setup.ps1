@@ -35,6 +35,7 @@ else {
 
 # Installing powerrshell packages | Instalando paquetes de powerShell
 Install-Module posh-git -Scope CurrentUser -Force
+# Para mas opciones de instalacion (https://github.com/dahlbyk/posh-git#installation)
 
 Install-Module -Name Terminal-Icons -Repository PSGallery -Force
 
