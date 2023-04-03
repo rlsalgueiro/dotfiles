@@ -1,6 +1,10 @@
+# Intalling Poweshell 7 for the terminal | Instalando Powershell 7 para el terminal
+
+winget install Microsoft.PowerShell -s winget
+
 # Intalling Oh-My-posh for the terminal | Instalando Oh-My-posh para el terminal
 
-winget install JanDeDobbeleer.OhMyPosh -s winget -e --accept-source-agreements --accept-package-agreements
+winget install JanDeDobbeleer.OhMyPosh -s winget
 
 #Instalando fuentes para el terminal
 oh-my-posh font install
