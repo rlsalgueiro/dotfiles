@@ -16,12 +16,16 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 ## debe agregar nd add zsh-syntax-highlighting and zsh-autosuggestions en plugins
-sed -e '/plugins=/ s/git zsh-syntax-highlighting zsh-autosuggestions/git' ~/.zshrc
+sed -i '/plugins=/ s/(git)/(git zsh-syntax-highlighting zsh-autosuggestions)/g' ~/.zshrc
 
 ## Agregando tema Powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-sed '/ZSH_THEME/ s/powerlevel10k\/powerlevel10k/robbyrussell' ~/.zshrc
+## configuracndo porwerlevel10 en zshrc
+sed -i '/ZSH_THEME/ s/robbyrussell/powerlevel10k\/powerlevel10k/g' ~/.zshrc
+
+## reiniciando zsh
+exec zsh
 
 # Configurando powerlevel10k 
 p10k configure
