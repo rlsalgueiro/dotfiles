@@ -6,10 +6,7 @@ Import-Module Terminal-Icons
 Import-Module posh-git
 
 # Prompt
-#oh-my-posh init pwsh --config ~/.jandedobbeleer.omp.json | Invoke-Expression
 oh-my-posh init pwsh --config "D:\project\GH-repos\dotfiles\windows\petambe.omp.json" | Invoke-Expression
-
-
 
 # PSReadLine
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin

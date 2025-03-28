@@ -1,5 +1,5 @@
 # Instalacion de paquetes para el terminal en linux
-sudo apt install zsh git fonts-font-awesome
+sudo apt install zsh git fonts-font-awesome python3 python3-pip ffmpeg
 
 # Instalando Zsh
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"

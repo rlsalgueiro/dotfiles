@@ -14,6 +14,9 @@ oh-my-posh font install
 ## Instalando paquetes necesarios
 winget install Git.Git -s winget -h -e --accept-source-agreements --accept-package-agreements
 
+## Instalando ffmpeg
+winget install "FFmpeg (Essentials Build)"
+
 # Create a symlink to user profile
 
 
@@ -21,7 +24,7 @@ winget install Git.Git -s winget -h -e --accept-source-agreements --accept-packa
 if (-not(Test-Path -Path $PROFILE -PathType Leaf)) {
     try {
         Invoke-RestMethod https://github.com/rlsalgueiro/dotfiles/raw/main/Windows/Microsoft.PowerShell_profile.ps1 -o $PROFILE
-        Write-Host "The profile @ [$PROFILE] has been created."
+        Write-Host "The profile @[$PROFILE] has been created."
     }
     catch {
         throw $_.Exception.Message
@@ -31,7 +34,7 @@ if (-not(Test-Path -Path $PROFILE -PathType Leaf)) {
 else {
     Get-Item -Path $PROFILE | Move-Item -Destination oldprofile.ps1
     Invoke-RestMethod https://github.com/rlsalgueiro/dotfiles/raw/main/Windows/Microsoft.PowerShell_profile.ps1 -o $PROFILE
-    Write-Host "The profile @ [$PROFILE] has been created and old profile moved."
+    Write-Host "The profile @[$PROFILE] has been created and old profile moved."
 }
 
 # le hacemos reload al profile

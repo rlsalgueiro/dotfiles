@@ -33,7 +33,7 @@ Update-Module - actualiza todos los modulos de PowerShell
 ### Windows Utilities
 
 - [Nilesoft.Shell](https://nilesoft.org/) - Powerful context menu manager for Windows File Explorer
-
+winget install nilesoft.shell
 ## Linux Terminal Configurations
 
 - [Zsh]()
